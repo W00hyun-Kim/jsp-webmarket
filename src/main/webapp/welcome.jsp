@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="EUC-KR">
+	<meta charset="UTF-8">
 	<title>Welcome</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -22,17 +22,17 @@
 	</nav>
 
 	<%!
-	// º¯¼ö ¶Ç´Â ¸Þ¼­µå ¼±¾ð 
-	String greeting = "À¥ ¼îÇÎ¸ô¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù.";
+	// ë³€ìˆ˜ ë˜ëŠ” ë©”ì„œë“œ ì„ ì–¸ 
+	String greeting = "ì›¹ ì‡¼í•‘ëª°ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤.";
 	String tagline = "Welcome to Web Market!";%>
 	
-	<!-- ÀüÃ¼ ÆÐµù 5¸¸Å­ (3ÀÌ Áß°£ÀÓ) -->
-	<!-- bg-primary : ±âº» »ö»ó -->
-	<!-- text white : ±ÛÀÚ ÇÏ¾é°Ô -->
+	<!-- ì „ì²´ íŒ¨ë”© 5ë§Œí¼ (3ì´ ì¤‘ê°„ìž„) -->
+	<!-- bg-primary : ê¸°ë³¸ ìƒ‰ìƒ -->
+	<!-- text white : ê¸€ìž í•˜ì–—ê²Œ -->
 	<div class="p-5 bg-primary text-white">
-		<!-- cotainer: ÁÂ¿ì °¡¿îµ¥ Á¤·Ä -->
+		<!-- cotainer: ì¢Œìš° ê°€ìš´ë° ì •ë ¬ -->
 		<div class="container">
-			<!-- display-3: ±ÛÀÚÅ©±â(Å« ±ÛÀÚ Áß º¸Åë) -->
+			<!-- display-3: ê¸€ìží¬ê¸°(í° ê¸€ìž ì¤‘ ë³´í†µ) -->
 			<h1 class="display-3">
 				<%=greeting%>
 			</h1>
@@ -45,10 +45,13 @@
 	            <%=tagline%>	       
 	        </h3>	        
 	        <%
-	        //½Ã°£ ÇÔ¼ö	        
+	        //ì‹œê°„ í•¨ìˆ˜	        
 	        Date today = new Date();
-	        SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");	        
-	        out.println("ÇöÀç Á¢¼Ó ½Ã°£: " + format.format(today));	     
+	        SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");	   
+	        
+	        
+	        
+	        out.println("í˜„ìž¬ ì ‘ì† ì‹œê°„: " + format.format(today));	     
 	        %>
 	        	        
 	    </div>
