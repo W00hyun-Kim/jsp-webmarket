@@ -42,8 +42,8 @@
 	       <%= tagline %>
 	    </h3>
 	    <%
-	    //refresh the page per 1s
-	    response.setIntHeader("Refresh", 1);
+	    //refresh the page per 5s
+	    response.setIntHeader("Refresh", 5);
 	    
 	    Date today = new Date();
 	    
