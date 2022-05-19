@@ -1,10 +1,12 @@
 <%@page import="dao.ProductRepository"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="dto.Product" %>
  
 <!-- Action Tag -->
+<!-- session : This server is based on TomCat server. need to know what session is. -->
+<!--  when you use code below, server will reuse it -->
 <jsp:useBean id="repository" class="dao.ProductRepository" scope="session" />  
     
     
@@ -16,7 +18,8 @@
 </head>
 <body>
 	<%
-	//ProductRepository repository = new ProductRepository();
+	//when using code below, server will update seperately.
+	//ProductRepository repository = new ProductRepository(); 
 	List<Product> products = repository.getAllProducts();
 	
 	for(Product product: products) {

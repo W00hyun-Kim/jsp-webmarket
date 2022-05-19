@@ -3,6 +3,10 @@
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 
+<jsp:useBean id="repository" class="dao.ProductRepository" scope="session" />  
+<%@ page import="java.util.List" %>
+<%@ page import="dto.Product" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +24,17 @@
 			</div>
 		</div>
 	</nav>
+
+
+	<%
+	//when using code below, server will update seperately.
+	//ProductRepository repository = new ProductRepository(); 
+	List<Product> products = repository.getAllProducts();
+	
+	for(Product product: products) {
+		out.println(product.toString() + "<br><br>");
+	}
+	%>
 
 	<%!
 	// 변수 또는 메서드 선언 
