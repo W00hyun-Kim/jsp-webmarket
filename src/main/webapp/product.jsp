@@ -29,6 +29,7 @@
 	</div>
 
 	<%
+	// product.jsp?id=p1234 로 넘어온 값(p1234)을 얻기
 	String id = request.getParameter("id");
 	Product product = repository.getProductById(id);
     %>

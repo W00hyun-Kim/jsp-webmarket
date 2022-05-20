@@ -4,8 +4,6 @@
 <%@ page import="java.util.List"%>
 <%@ page import="dto.Product"%>
 <!-- session 서버측에 저장 -->
-<jsp:useBean id="repository" class="dao.ProductRepository"
-	scope="session" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +27,7 @@
 	</div>
 
 	<%
-    // ProductRepository repository = new ProductRepository();
+    ProductRepository repository = ProductRepository.getInstance();
     List<Product> products = repository.getAllProducts();   
     %>
 
