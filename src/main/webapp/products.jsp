@@ -27,6 +27,7 @@
 	</div>
 
 	<%
+
     ProductRepository repository = ProductRepository.getInstance();
     List<Product> products = repository.getAllProducts();   
     %>

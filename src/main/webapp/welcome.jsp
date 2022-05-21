@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.Date" %>
@@ -50,6 +51,14 @@
 	    SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
 	    
 	    out.println("현재 접속 시간: " + format.format(today));
+	    
+	    //session
+	    session.setAttribute("name", "김우현");
+	    session.setAttribute("age", 28);
+	    
+	    session.setMaxInactiveInterval(5);
+	    
+	   	    
 	    %>
 	  </div>
 	</div>

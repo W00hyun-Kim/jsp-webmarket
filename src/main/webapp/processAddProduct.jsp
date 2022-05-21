@@ -17,7 +17,5 @@ repository.addProduct(newProduct);
 
 response.sendRedirect("products.jsp");
 
-
-
 %>
 
