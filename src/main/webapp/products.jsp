@@ -3,6 +3,8 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
 <%@ page import="dto.Product"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!-- session 서버측에 저장 -->
 <!DOCTYPE html>
 <html>
@@ -56,5 +58,8 @@
 
 
 	<jsp:include page="footer.jsp" />
+	
+	<c:out value="Hello world" />
+	
 </body>
 </html>
