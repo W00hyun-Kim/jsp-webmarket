@@ -8,7 +8,7 @@
 	long id = Long.parseLong(request.getParameter("id"));
 	
 	TodoRepository repository = TodoRepository.getInstance();
-	repository.toggle(id);
+	repository.remove(id);
 			
 	response.sendRedirect("todolist.jsp");
 
