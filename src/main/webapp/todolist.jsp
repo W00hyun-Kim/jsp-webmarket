@@ -1,3 +1,5 @@
+<%@page import="dto.Todo"%>
+<%@page import="java.util.List"%>
 <%@page import="dao.TodoRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <!DOCTYPE html>
@@ -14,6 +16,14 @@
     <title>Todo List</title>
     <script>
       function setDone(id) {
+    	  $.ajax({
+    		  url: "processToggle.jsp",
+    		  type: "post",
+    		  data: {"id" : id },
+    		  success : function (data) {
+    			  window.location.reload();
+    		  }
+    	  });
       }
 
       function addTodo() {
@@ -43,7 +53,7 @@
   	<%
   	TodoRepository repository = TodoRepository.getInstance();
   	out.println(repository.getTodos());
-  	 
+  	List<Todo> todos = repository.getTodos(); 
   	%>
   
   
@@ -58,6 +68,26 @@
       </section>
 
       <section class="todos-wrapper">
+      	<%
+      	for(Todo todo : todos) {
+      	%>
+      		<div class="todo-item" onclick="setDone(<%= todo.getId() %>)">
+	          <div class="remove">&times;</div>
+	          <div class="todo-text <%= todo.isDone()? "checked":"" %>"><%= todo.getTask() %></div>
+	          
+	          <!-- 체크표시 없어지는 거 확인 -->
+	          <%
+	          if (todo.isDone()) {	   
+	          %>
+	          <div class="check-mark">&#x2713;</div>	          
+	          <%
+	          }
+	          %>
+        	</div>
+      	<%
+      	}
+      	%>
+      
         <div class="todo-item">
           <div class="remove">&times;</div>
           <div class="todo-text checked">숙제</div>
