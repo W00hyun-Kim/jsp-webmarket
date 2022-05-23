@@ -17,7 +17,7 @@
     <script>
       function setDone(id) {
     	  $.ajax({
-    		  url: "processToggle.jsp",
+    		  url: "toggleTodo.do",
     		  type: "post",
     		  data: {"id" : id },
     		  success : function (data) {
@@ -34,7 +34,7 @@
     	  let task = $("#text").val();
     	  
     	  $.ajax({
-    		  url: "processAddTodo.jsp",
+    		  url: "addTodo.do",   //컨트롤러로 했기에 변경해줬음
     		  type: "post",
     		  data: {"task" : task },
     		  success : function (data) {
@@ -45,7 +45,7 @@
 
       function remove(id) {
     	  $.ajax({
-    		  url: "processRemoveTodo.jsp",
+    		  url: "removeTodo.do",
     		  type: "post",
     		  data: {"id" : id },
     		  success : function (data) {
@@ -61,7 +61,7 @@
   	<%
   	TodoRepository repository = TodoRepository.getInstance();
   	//out.println(repository.getTodos());
-  	List<Todo> todos = repository.getTodos(); 
+  	List<Todo> todos = repository.getTodos();
   	%>
   
   
