@@ -5,17 +5,17 @@
 
 <%
 
-String task = request.getParameter("productId");
-
-Todo todo = new Todo(task);
-
-
-TodoRepository repository = TodoRepository.getInstance();
-repository.addTodo(todo);
-
-
-
-response.sendRedirect("todolist.jsp");
+	String task = request.getParameter("task");
+	
+	Todo todo = new Todo(task);
+	
+	
+	TodoRepository repository = TodoRepository.getInstance();
+	repository.addTodo(todo);
+	
+	
+	
+	response.sendRedirect("todolist.jsp");
 
 %>
 
